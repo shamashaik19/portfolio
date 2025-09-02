@@ -1,112 +1,76 @@
-import React from 'react';
-import { Award, CheckCircle } from 'lucide-react';
+import { useState } from 'react';
+import { ChevronUp, ChevronDown } from 'lucide-react';
+
+const certifications = [
+  {
+    title: 'DevOps Engineer',
+    provider: 'Star Agile',
+    link: 'https://drive.google.com/file/d/1TGiT5LRGGX8V-sovi-OwaBPGrNGteIwJ/view?usp=sharing',
+    image: 'https://img.icons8.com/color/48/000000/devops.png'
+  },
+  {
+    title: 'Kubernetes',
+    provider: 'IBM',
+    link: 'https://drive.google.com/file/d/1c-7qY1M5k8aXa6rDTVPCEoS8JSjMv0-K/view?usp=sharing',
+    image: 'https://img.icons8.com/color/48/000000/kubernetes.png'
+  },
+  {
+    title: 'Docker',
+    provider: 'IBM',
+    link: 'https://drive.google.com/file/d/1MnYevmRNCmVsQd51jg164-Wn9RZ8fpFi/view?usp=sharing',
+    image: 'https://img.icons8.com/color/48/000000/docker.png'
+  },
+  {
+    title: 'DevOps Certificate',
+    provider: 'IBM',
+    link: 'https://drive.google.com/file/d/1-gb0jrrm_Dr_oQtV1tLRDJXkRZbQHCVo/view?usp=sharing',
+    image: 'https://img.icons8.com/color/48/000000/certificate.png'
+  },
+];
 
 const Certifications = () => {
-  const certifications = [
-    {
-      title: 'AWS Certified Solutions Architect',
-      level: 'Professional',
-      issuer: 'Amazon Web Services',
-      year: '2023',
-      badge: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=200',
-      status: 'Active'
-    },
-    {
-      title: 'Certified Kubernetes Administrator',
-      level: 'CKA',
-      issuer: 'Cloud Native Computing Foundation',
-      year: '2023',
-      badge: 'https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=200',
-      status: 'Active'
-    },
-    {
-      title: 'HashiCorp Certified: Terraform Associate',
-      level: 'Associate',
-      issuer: 'HashiCorp',
-      year: '2022',
-      badge: 'https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=200',
-      status: 'Active'
-    },
-    {
-      title: 'Microsoft Azure DevOps Engineer Expert',
-      level: 'Expert',
-      issuer: 'Microsoft',
-      year: '2022',
-      badge: 'https://images.pexels.com/photos/1181673/pexels-photo-1181673.jpeg?auto=compress&cs=tinysrgb&w=200',
-      status: 'Active'
-    },
-    {
-      title: 'Docker Certified Associate',
-      level: 'Associate',
-      issuer: 'Docker',
-      year: '2021',
-      badge: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=200',
-      status: 'Active'
-    },
-    {
-      title: 'Google Cloud Professional DevOps Engineer',
-      level: 'Professional',
-      issuer: 'Google Cloud',
-      year: '2021',
-      badge: 'https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=200',
-      status: 'Active'
-    }
-  ];
+  const [open, setOpen] = useState(false);
 
   return (
-    <section id="certifications" className="py-20 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Certifications</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-emerald-500 mx-auto rounded-full"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Industry-recognized certifications demonstrating expertise in cloud platforms and DevOps technologies
-            </p>
-          </div>
+    <section id="certifications" className="py-20 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Certifications</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-emerald-500 mx-auto rounded-full mt-2"></div>
+          <p className="text-gray-600 mt-4">
+            Professional certifications that validate my expertise in DevOps, Cloud, and Containerization.
+          </p>
+        </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="flex justify-center">
+          <button
+            onClick={() => setOpen(!open)}
+            className="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition-all duration-300"
+          >
+            {open ? 'Hide Certifications' : 'View Certifications'}
+            {open ? <ChevronUp className="ml-2 h-5 w-5" /> : <ChevronDown className="ml-2 h-5 w-5" />}
+          </button>
+        </div>
+
+        {open && (
+          <div className="mt-8 grid sm:grid-cols-2 gap-6">
             {certifications.map((cert, index) => (
-              <div
+              <a
                 key={index}
-                className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100"
+                href={cert.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 hover:scale-105 transform"
               >
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <Award className="h-8 w-8 text-blue-600" />
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="h-5 w-5 text-emerald-500" />
-                    <span className="text-sm font-medium text-emerald-600">{cert.status}</span>
-                  </div>
+                <img src={cert.image} alt={cert.title} className="w-12 h-12 mr-4" />
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-900">{cert.title}</h3>
+                  <p className="text-gray-500">{cert.provider}</p>
                 </div>
-                
-                <div className="space-y-3">
-                  <h3 className="text-lg font-bold text-gray-900 leading-tight">{cert.title}</h3>
-                  <div className="space-y-1">
-                    <p className="text-blue-600 font-semibold">{cert.level}</p>
-                    <p className="text-gray-600">{cert.issuer}</p>
-                    <p className="text-sm text-gray-500">Issued: {cert.year}</p>
-                  </div>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-gray-200">
-                  <button className="w-full inline-flex items-center justify-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Verify Credential
-                  </button>
-                </div>
-              </div>
+              </a>
             ))}
           </div>
-
-          <div className="mt-16 text-center">
-            <div className="inline-flex items-center px-6 py-3 bg-emerald-100 text-emerald-800 rounded-full">
-              <CheckCircle className="mr-2 h-5 w-5" />
-              <span className="font-medium">All certifications are current and verified</span>
-            </div>
-          </div>
-        </div>
+        )}
       </div>
     </section>
   );

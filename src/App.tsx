@@ -1,7 +1,7 @@
-import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
+import Certifications from './components/Certifications';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
@@ -18,6 +18,7 @@ function App() {
         <Skills />
         <Projects />
         <Experience />
+        <Certifications /> {/* Certifications added here */}
         <Contact />
       </main>
       <Footer />
