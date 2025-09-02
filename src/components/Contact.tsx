@@ -29,8 +29,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'contact@example.com',
-      href: 'mailto:contact@example.com'
+      value: 'shamashaik.eee.rymec@gmail.com',
+      href: 'mailto:shamashaik.eee.rymec@gmail.com'
     },
     {
       icon: Phone,
@@ -47,7 +47,7 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
+    { icon: Github, href: 'https://github.com/shamashaik19/portfolio.git', label: 'GitHub' },
     { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
     { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' }
   ];

@@ -4,39 +4,15 @@ import { Calendar, MapPin, TrendingUp } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      title: 'Senior DevOps Engineer',
-      company: 'TechCorp Solutions',
-      location: 'San Francisco, CA',
-      period: '2022 - Present',
-      achievements: [
-        'Led migration of 50+ microservices to Kubernetes, reducing infrastructure costs by 40%',
-        'Implemented GitOps workflows using ArgoCD, improving deployment reliability by 95%',
-        'Designed and deployed multi-region AWS architecture serving 10M+ daily users',
-        'Mentored junior engineers and established DevOps best practices across 3 teams'
-      ]
-    },
-    {
-      title: 'Cloud Infrastructure Engineer',
-      company: 'CloudFirst Inc.',
-      location: 'Austin, TX',
-      period: '2020 - 2022',
-      achievements: [
-        'Automated infrastructure provisioning using Terraform, reducing setup time from weeks to hours',
-        'Built comprehensive monitoring stack with Prometheus and Grafana for 200+ services',
-        'Implemented security hardening across all environments, achieving SOC 2 compliance',
-        'Optimized cloud spending through right-sizing and reserved instances, saving $500K annually'
-      ]
-    },
-    {
-      title: 'DevOps Engineer',
-      company: 'StartupXYZ',
+      title: 'DevOps Intern',
+      company: 'Star Agile',
       location: 'Remote',
-      period: '2019 - 2020',
+      period: 'Dec 2024 - Mar 2025',
       achievements: [
-        'Established CI/CD pipelines from scratch using Jenkins and Docker',
-        'Migrated legacy infrastructure to AWS, improving scalability and reducing downtime by 80%',
-        'Implemented infrastructure as code practices using CloudFormation',
-        'Set up comprehensive backup and disaster recovery procedures'
+        'Gained hands-on experience with CI/CD pipeline development using Jenkins and GitLab CI',
+        'Worked with containerization technologies including Docker and Kubernetes',
+        'Assisted in infrastructure automation using Terraform and Ansible',
+        'Participated in monitoring and logging setup using Prometheus and Grafana'
       ]
     }
   ];
