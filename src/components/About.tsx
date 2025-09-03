@@ -1,96 +1,67 @@
-import { Server, Cloud, GitBranch, Shield, Boxes, Mail } from 'lucide-react';
+// src/components/About.tsx
+import { Cloud, GitBranch, Activity } from "lucide-react";
 
 const About = () => {
-  const highlights = [
-    {
-      icon: Cloud,
-      title: 'Cloud & DevOps',
-      description: 'Passionate DevOps engineer with expertise in cloud technologies, CI/CD pipelines, and infrastructure automation.'
-    },
-    {
-      icon: GitBranch,
-      title: 'Automation & CI/CD',
-      description: 'Skilled in Jenkins, GitHub Actions, GitLab CI, and scripting to automate deployments and optimize workflows.'
-    },
-    {
-      icon: Server,
-      title: 'Infrastructure as Code',
-      description: 'Experienced in Terraform, Ansible, and Docker for efficient provisioning and containerized deployments.'
-    },
-    {
-      icon: Boxes,
-      title: 'Containerization & Orchestration',
-      description: 'Proficient in Docker and Kubernetes for deploying, scaling, and managing applications in cloud environments.'
-    },
-    {
-      icon: Shield,
-      title: 'Security & Best Practices',
-      description: 'Focused on implementing secure DevOps practices and maintaining reliable and compliant environments.'
-    },
-  ];
-
-  const skills = [
-    'AWS', 'Terraform', 'Docker', 'Kubernetes', 'Jenkins', 'GitHub Actions',
-    'Prometheus', 'Grafana', 'AWS Monitoring', 'Linux', 'Python'
-  ];
-
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+    <section
+      id="about"
+      className="relative py-20 px-6 sm:px-10 lg:px-20 bg-gradient-to-br from-slate-50 via-teal-50 to-purple-100 text-slate-900"
+    >
+      {/* Decorative Background Shapes */}
+      <div className="absolute top-0 left-0 w-40 h-40 bg-teal-200/30 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute bottom-0 right-0 w-60 h-60 bg-purple-300/30 rounded-full blur-3xl -z-10"></div>
 
-          {/* About / Profile */}
-          <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white">About Me</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-500 mx-auto rounded-full"></div>
-            <p className="text-lg text-gray-300 mt-4">
-              I am a passionate DevOps and Cloud Engineer focused on building efficient, scalable, and automated infrastructure.
-              My expertise includes cloud services, CI/CD pipelines, containerization, infrastructure automation, monitoring, and scripting.
-            </p>
+      {/* Heading */}
+      <div className="max-w-5xl mx-auto text-center">
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+          About{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600">
+            Me
+          </span>
+        </h2>
+        <p className="mt-4 text-lg sm:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
+          I’m a passionate <span className="font-semibold text-teal-600">DevOps & Cloud Engineer</span> 
+          who loves designing scalable systems, automating workflows, and ensuring smooth delivery 
+          through modern cloud-native practices.
+        </p>
+      </div>
+
+      {/* Cards */}
+      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {/* Cloud Engineering */}
+        <div className="p-6 bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl hover:shadow-2xl transition-all border border-slate-100">
+          <div className="flex items-center gap-3 mb-3">
+            <Cloud className="h-6 w-6 text-teal-600" />
+            <h3 className="text-xl font-semibold text-teal-700">Cloud Engineering</h3>
           </div>
+          <p className="text-slate-600">
+            Skilled with AWS, Docker, and Kubernetes to architect reliable, 
+            scalable, and secure infrastructure.
+          </p>
+        </div>
 
-          {/* Skills Badges */}
-          <div className="flex flex-wrap justify-center gap-3 mb-16">
-            {skills.map((skill, index) => (
-              <span
-                key={index}
-                className="px-4 py-2 bg-blue-900/40 text-blue-300 rounded-full text-sm font-medium shadow"
-              >
-                {skill}
-              </span>
-            ))}
+        {/* CI/CD Automation */}
+        <div className="p-6 bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl hover:shadow-2xl transition-all border border-slate-100">
+          <div className="flex items-center gap-3 mb-3">
+            <GitBranch className="h-6 w-6 text-purple-600" />
+            <h3 className="text-xl font-semibold text-purple-700">CI/CD Automation</h3>
           </div>
+          <p className="text-slate-600">
+            Experienced with Jenkins, GitHub Actions, and Ansible to streamline 
+            deployments and boost developer productivity.
+          </p>
+        </div>
 
-          {/* Highlights / Skills */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {highlights.map((highlight, index) => (
-                <div
-                  key={index}
-                  className="p-6 bg-gray-800/70 rounded-xl hover:bg-gray-700/80 transition-colors duration-300"
-                >
-                  <div className="flex items-center space-x-3 mb-3">
-                    <div className="p-2 bg-blue-900/40 rounded-lg">
-                      <highlight.icon className="h-6 w-6 text-cyan-400" />
-                    </div>
-                    <h3 className="font-semibold text-white">{highlight.title}</h3>
-                  </div>
-                  <p className="text-gray-300 text-sm leading-relaxed">{highlight.description}</p>
-                </div>
-              ))}
-            </div>
+        {/* Reliability & Monitoring */}
+        <div className="p-6 bg-white/80 backdrop-blur-sm shadow-lg rounded-2xl hover:shadow-2xl transition-all border border-slate-100">
+          <div className="flex items-center gap-3 mb-3">
+            <Activity className="h-6 w-6 text-pink-600" />
+            <h3 className="text-xl font-semibold text-pink-700">Reliability & Monitoring</h3>
           </div>
-
-          {/* Contact / Get in Touch */}
-          <div className="text-center">
-            <a
-              href="mailto:shamashaik.eee.rymec@gmail.com"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-500 hover:bg-cyan-500 text-white font-semibold rounded-full shadow-lg transition-colors duration-300"
-            >
-              <Mail className="h-5 w-5" /> Get in Touch
-            </a>
-          </div>
-
+          <p className="text-slate-600">
+            Ensuring performance and uptime with Prometheus, Grafana, and 
+            robust logging systems.
+          </p>
         </div>
       </div>
     </section>

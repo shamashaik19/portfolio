@@ -1,9 +1,9 @@
-import React from 'react';
 import { MapPin, Github, Linkedin, Mail } from 'lucide-react';
 
 const Contact = () => {
   const contactInfo = [
-    { icon: MapPin, title: 'Location', value: 'Bangalore, India', href: null }
+    { icon: MapPin, title: 'Location', value: 'Bangalore, India', href: null },
+    { icon: Mail, title: 'Email', value: 'shamashaik.eee.rymec@gmail.com', href: 'mailto:shamashaik.eee.rymec@gmail.com' }
   ];
 
   const socialLinks = [
@@ -11,26 +11,27 @@ const Contact = () => {
     { icon: Linkedin, href: 'https://www.linkedin.com/in/shama-shaik-999aa0257/', label: 'LinkedIn' }
   ];
 
-  const email = 'shamashaik.eee.rymec@gmail.com';
-
   return (
     <section id="contact" className="py-20 bg-gray-900 text-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
+        {/* Title */}
+        <div className="text-center mb-10">
           <h2 className="text-3xl sm:text-4xl font-bold text-white">Get In Touch</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-gray-500 mx-auto rounded-full mt-2"></div>
-          {/* Email below heading */}
-          <p className="text-gray-300 mt-4 text-lg">
-            <Mail className="inline h-5 w-5 mr-2 text-blue-400" />
-            <a href={`mailto:${email}`} className="text-blue-400 hover:text-blue-500">{email}</a>
-          </p>
           <p className="text-xl text-gray-300 mt-4 max-w-3xl mx-auto">
             Ready to discuss your next cloud infrastructure project? Let's connect.
           </p>
+
+          {/* Email Box Below Text */}
+          <a
+            href="mailto:shamashaik.eee.rymec@gmail.com"
+            className="inline-flex items-center mt-6 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg shadow-md transition-all"
+          >
+            <Mail className="mr-2 h-5 w-5" />
+            shamashaik.eee.rymec@gmail.com
+          </a>
         </div>
 
-        {/* Contact Info + Social Links */}
         <div className="max-w-md mx-auto space-y-8">
           {/* Contact Info */}
           <div className="space-y-6">
@@ -42,7 +43,9 @@ const Contact = () => {
                 <div>
                   <p className="font-medium text-gray-100">{info.title}</p>
                   {info.href ? (
-                    <a href={info.href} className="text-blue-400 hover:text-blue-500">{info.value}</a>
+                    <a href={info.href} className="text-blue-400 hover:text-blue-500">
+                      {info.value}
+                    </a>
                   ) : (
                     <p className="text-gray-300">{info.value}</p>
                   )}

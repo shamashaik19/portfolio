@@ -72,18 +72,24 @@ const Projects = () => {
         'Responsive design'
       ],
       github: 'https://github.com/shamashaik19/YouTube-clone.git',
-      image: 'data:image/png;base64,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'
+      image: 'https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg'
     }
   ];
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section 
+      id="projects" 
+      className="py-20 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 relative"
+    >
+      {/* Decorative overlay */}
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')] opacity-10"></div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center space-y-4 mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">My Projects</h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-emerald-500 mx-auto rounded-full"></div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">My Projects</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-emerald-400 mx-auto rounded-full"></div>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               A collection of my real-world projects showcasing development and DevOps skills
             </p>
           </div>
@@ -92,7 +98,7 @@ const Projects = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-white/10 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-shadow duration-300 border border-gray-700"
               >
                 <div className="lg:flex">
                   <div className="lg:w-1/3">
@@ -104,28 +110,28 @@ const Projects = () => {
                   </div>
                   <div className="lg:w-2/3 p-8">
                     <div className="space-y-4">
-                      <h3 className="text-2xl font-bold text-gray-900">{project.title}</h3>
-                      <p className="text-gray-700 leading-relaxed">{project.description}</p>
+                      <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+                      <p className="text-gray-300 leading-relaxed">{project.description}</p>
                       
                       <div className="space-y-3">
-                        <h4 className="font-semibold text-gray-900">Key Achievements:</h4>
+                        <h4 className="font-semibold text-white">Key Achievements:</h4>
                         <ul className="space-y-2">
                           {project.achievements.map((achievement, achIndex) => (
                             <li key={achIndex} className="flex items-start space-x-2">
-                              <ArrowRight className="h-4 w-4 text-emerald-500 mt-1 flex-shrink-0" />
-                              <span className="text-gray-700">{achievement}</span>
+                              <ArrowRight className="h-4 w-4 text-emerald-400 mt-1 flex-shrink-0" />
+                              <span className="text-gray-300">{achievement}</span>
                             </li>
                           ))}
                         </ul>
                       </div>
 
                       <div className="space-y-3">
-                        <h4 className="font-semibold text-gray-900">Technologies Used:</h4>
+                        <h4 className="font-semibold text-white">Technologies Used:</h4>
                         <div className="flex flex-wrap gap-2">
                           {project.technologies.map((tech, techIndex) => (
                             <span
                               key={techIndex}
-                              className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium"
+                              className="px-3 py-1 bg-blue-900/40 text-blue-300 rounded-full text-sm font-medium border border-blue-700"
                             >
                               {tech}
                             </span>
@@ -138,7 +144,7 @@ const Projects = () => {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center px-4 py-2 border border-gray-300 hover:border-gray-400 text-gray-700 font-medium rounded-lg transition-colors"
+                          className="inline-flex items-center px-4 py-2 border border-gray-500 hover:border-gray-400 text-gray-200 hover:text-white font-medium rounded-lg transition-colors"
                         >
                           <Github className="mr-2 h-4 w-4" />
                           Source Code
@@ -157,4 +163,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
