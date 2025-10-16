@@ -33,7 +33,7 @@ const Header: React.FC = () => {
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 hover:opacity-80 transition"
         >
-          Shama
+          SHAMA
         </button>
 
         {/* Desktop Navigation */}
